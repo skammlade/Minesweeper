@@ -12,15 +12,27 @@ public class Square
     }
 
     // set this square as a mine
-    public void setMine()
+    public boolean setMine()
     {
-        this.isMine=true;
+        if(this.isMine)
+            return false;
+        else
+        {
+            this.isMine=true;
+            return true;
+        }
     }
 
     // flag this square
     public void setFlag()
     {
         this.isFlagged=true;
+    }
+
+    // increment the adjacent mine count
+    public void incrementAdjacentMineCount()
+    {
+        this.countAdjacentMines++;
     }
 
     // set adjacent mine count
@@ -57,6 +69,7 @@ public class Square
                 return "#";
         }
     }
+
 
 }
 
